@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DARK GRAM</title>
+<style>
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: #080c09;
+  color: #e5eee7;
+  font-family: Arial, sans-serif;
+}
+header {
+  padding: 20px;
+  background: #101811;
+  border-bottom: 1px solid #263b2b;
+  color: #75df85;
+  font-size: 25px;
+  font-weight: bold;
+}
+.search { padding: 15px; }
+input {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid #304b35;
+  background: #17221a;
+  color: white;
+  font-size: 16px;
+}
+.tabs {
+  display: flex;
+  justify-content: space-around;
+  padding: 15px 5px;
+  background: #101811;
+}
+.tabs button {
+  background: none;
+  border: 0;
+  color: #9aaa9d;
+  font-size: 15px;
+}
+.tabs button.active { color: #75df85; }
+.chat {
+  padding: 17px;
+  border-bottom: 1px solid #1e2b21;
+  display: flex;
+  gap: 13px;
+  align-items: center;
+}
+.avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #24452b;
+  display: grid;
+  place-items: center;
+  color: #8cf29b;
+  font-size: 21px;
+}
+.info { flex: 1; }
+.info b { font-size: 16px; }
+.info p { color: #8d9b90; margin-bottom: 0; }
+#content { padding-bottom: 25px; }
+</style>
+</head>
+<body>
+<header>☢ DARK GRAM</header>
+<div class="search">
+<input placeholder="Поиск">
+</div>
+<div class="tabs">
+<button class="active" onclick="show('Чаты',this)">Чаты</button>
+<button onclick="show('Контакты',this)">Контакты</button>
+<button onclick="show('Профиль',this)">Профиль</button>
+</div>
+<div id="content">
+<div class="chat">
+<div class="avatar">☢</div>
+<div class="info">
+<b>DARK GRAM</b>
+<p>Добро пожаловать в Зону...</p>
+</div>
+</div>
+</div>
+<script>
+function show(name,btn) {
+ document.querySelectorAll('.tabs button').forEach(b=>b.classList.remove('active'));
+ btn.classList.add('active');
+ document.getElementById('content').innerHTML =
+ '<div class="chat"><div class="avatar">☢</div><div class="info"><b>'+name+'</b><p>Раздел DARK GRAM</p></div></div>';
+}
+</script>
+</body>
+</html>
